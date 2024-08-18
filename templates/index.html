@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Organizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Meeting Information Form</h1>
+    <form action="{{ url_for('add_meeting') }}" method="post">
+        <label for="topic">Meeting Topic:</label>
+        <input type="text" id="topic" name="topic" required><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br>
+
+        <label for="start_time">Beginning Time:</label>
+        <input type="time" id="start_time" name="start_time" required><br>
+
+        <label for="end_time">End Time:</label>
+        <input type="time" id="end_time" name="end_time" required><br>
+
+        <label for="participants">Participants:</label>
+        <input type="text" id="participants" name="participants" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <div class="show-meetings-container">
+        <a href="{{ url_for('list_meetings') }}">Show Meetings</a>
+    </div>
+</body>
+</html>
